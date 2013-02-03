@@ -1,7 +1,7 @@
 MLReader LICENSE Information
 ========
 
-The MIT License is simple and easy to understand and it places almost no restrictions on what you can do with a jQuery project.
+The MIT License is simple and easy to understand and it places almost no restrictions on what you can do with the project.
 
 You are free to use a the MLReader project in commercial projects as long as the copyright header is left intact.
 
