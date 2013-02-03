@@ -3,6 +3,10 @@ MLReader
 
 This extension displays common webstandards mailing list archives in a more readable way. Currently supports w3c mailing lists.
 
+## Get it:
+
+[Chrome Web Store](https://chrome.google.com/webstore/detail/webstandards-mailing-list/kapkofkiggcefopeamfcpkkgfjjhmamf) – it's free!
+
 --------
 
 ### Screenshot
@@ -18,7 +22,7 @@ This extension displays common webstandards mailing list archives in a more read
 
 ### Supported platforms:
 
-- Google Chrome
+- [Google Chrome via Web Store](https://chrome.google.com/webstore/detail/webstandards-mailing-list/kapkofkiggcefopeamfcpkkgfjjhmamf)
 - ~~Mozilla Firefox~~ [planned]
 - ~~Opera~~ [planned]
 
