@@ -5,7 +5,9 @@ This extension displays common webstandards mailing list archives in a more read
 
 --------
 
-![Screenshot of a new styled mailing list archive message showing a much cleaner and better readable design](meta/screenshot-1.png)
+### Screenshot
+
+[Show screenshot](meta/screenshot-1.png)
 
 --------
 
