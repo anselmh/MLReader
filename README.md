@@ -5,6 +5,10 @@ This extension displays common webstandards mailing list archives in a more read
 
 --------
 
+![Screenshot of a new styled mailing list archive message showing a much cleaner and better readable design](meta/screenshot-1.png)
+
+--------
+
 ### Currently only supports:
 
 - W3C Mailing List Archives
