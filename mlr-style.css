@@ -1,0 +1,130 @@
+/* Load WebFonts from Google Webfont directory */
+
+@font-face {
+  font-family: 'Droid Serif';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Droid Serif'), local('DroidSerif'), url(http://themes.googleusercontent.com/static/fonts/droidserif/v3/0AKsP294HTD-nvJgucYTaLrIa-7acMAeDBVuclsi6Gc.woff) format('woff');
+}
+@font-face {
+  font-family: 'Tienne';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Tienne Regular'), local('Tienne-Regular'), url(http://themes.googleusercontent.com/static/fonts/tienne/v5/VXypd3k44URZYt2LYxU_4evvDin1pK8aKteLpeZ5c0A.woff) format('woff');
+}
+
+/* Set basic page styles */
+
+body {
+	-webkit-box-sizing: border-box !important;
+	   -moz-box-sizing: border-box !important;
+	    -ms-box-sizing: border-box !important;
+	        box-sizing: border-box !important;
+	max-width: 40em !important;
+	margin: 2em auto !important;
+	padding: 1em !important;
+
+
+	background: #fff !important;
+	color: #222 !important;
+
+	font-family: Tienne !important;
+	font-size: 16px !important;
+	line-height: 1.4 !important;
+}
+
+.w3c .links,
+.whatwg > ul {
+	list-style: none !important;
+	padding: 0 !important;
+	color: #444 !important;
+}
+.w3c .links li,
+.whatwg > ul > li {
+	color: #999 !important;
+}
+
+
+.w3c .head, .w3c .foot {
+	margin: 2em 0 2em 0 !important;
+	font-family: "Droid Serif" !important;
+}
+	.w3c .head p,
+	.w3c .foot p{
+		color: #999 !important;
+	}
+	.w3c .head a,
+	.w3c .foot a,
+		.w3c .head a:visited,
+		.w3c .foot a:visited {
+		color: #444 !important;
+	}
+		.w3c .head a:hover,
+		.w3c .foot a:hover {
+			color: #444 !important;
+		}
+
+	.w3c .head h1,
+	.whatwg h1 {
+		font-size: 1.5em !important;
+		margin: 1em 0 !important;
+	}
+	.w3c .head .links li a,
+	.w3c #upper a,
+	.whatwg > a, 
+	.whatwg > ul a{
+		color: #999 !important;
+	}
+
+
+.w3c .mail {
+	margin: 2em 0 2em 0 !important;
+}	
+	.w3c .mail > .headers {
+		display: block !important;
+		height: 2em;
+		-webkit-transition: all 0.5s !important;
+		   -moz-transition: all 0.5s !important;
+		    -ms-transition: all 0.5s !important;
+		        transition: all 0.5s !important;
+	}
+	.w3c .mail > .headers:hover {
+		height: 12em !important;
+	}
+	.w3c .mail > .headers > *:not(#from) {
+		opacity: 0;
+		-webkit-transition: all 0.75s !important;
+		   -moz-transition: all 0.75s !important;
+		    -ms-transition: all 0.75s !important;
+		        transition: all 0.75s !important;
+	}
+	.w3c .mail > .headers:hover > * {
+		opacity: 1 !important;
+	}
+
+	.w3c .mail > .headers,
+	.w3c .mail > .headers a {
+		color: #444 !important;
+		line-height: 1.5;
+	}
+
+		.w3c #from,
+		.w3c #from a{
+			color: #444;
+		}
+
+	.w3c #body,
+	.whatwg > pre {
+		font-family: Tienne !important;
+		font-size: 16px !important;
+		line-height: 1.5 !important;
+		padding: 2em 0 !important; 
+	}
+
+	.w3c #body {
+		border-top: thin solid #999;
+	}
+	
+	.w3c .mail #received {
+		color: #444 !important;
+	}
