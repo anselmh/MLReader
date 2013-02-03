@@ -1,0 +1,20 @@
+{   
+	"name": "Webstandards Mailing List Reader",
+	"version": "1.0",
+	"manifest_version": 2,
+	"description": "This extension displays common webstandards mailing list archives in a more readable way. Currently supports w3c mailing lists.",
+	"content_scripts": [
+        {   
+            "matches": [
+            	"*://lists.w3.org/*",
+            	"*://lists.whatwg.org/*"
+            ],
+            "css": ["mlr-style.css"],
+            "js": ["mlr-inject.js"]
+        }
+    ],
+    "permissions": [
+    	"http://lists.w3.org/",
+    	"http://lists.whatwg.org/"
+  	]
+}
