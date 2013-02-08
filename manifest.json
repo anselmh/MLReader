@@ -10,7 +10,7 @@
             	"*://lists.whatwg.org/*"
             ],
             "css": ["mlr-style.css"],
-            "js": ["mlr-inject.js"]
+            "js": ["showdown.js", "mlr-inject.js"]
         }
     ],
     "permissions": [
