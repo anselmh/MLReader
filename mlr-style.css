@@ -33,6 +33,18 @@ body {
 	line-height: 1.4 !important;
 }
 
+blockquote {
+	font-style: italic;
+	border-left: .25em solid #ccc;
+	margin-left: 0;
+	padding-left: 1.25em;
+	color: #444;
+}
+
+p > code {
+	color: #1CA8FF;
+}
+
 .w3c .links,
 .whatwg > ul {
 	list-style: none !important;

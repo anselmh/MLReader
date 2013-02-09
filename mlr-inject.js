@@ -9,17 +9,22 @@
 		[].forEach.call( document.querySelectorAll('[data-markdown]'), function  fn(elem){
 		  
 			// strip leading whitespace so it isn't evaluated as code
-			var text      = elem.innerHTML.replace(/\n\s*\n/g,'\n');
+			var text      = elem.innerHTML.replace(/\n\s*\n/g,'\n\n');
 			var leadingws = text.match(/^\n?(\s*)/)[1].length;
 			var regex     = new RegExp('\\n?\\s{' + leadingws + '}','g');
-			var md        = text.replace(regex,'\n');
+			var md        = (leadingws > 0) ? text.replace(regex,'\n') : text;
+
+			// convert entities to characters
+			var dummy = document.createElement("div");
+			dummy.innerHTML = md;
+			md = dummy.textContent;
+
 			var html      = (new Showdown.converter()).makeHtml(md);
 		 
 			// here, have sum HTML
 			elem.innerHTML = html;
 	 
 	  });
-	 
 	};
 
 
@@ -39,11 +44,16 @@
 		contentElement = document.createElement('div');
 		contentElement.className = 'msg';
 		contentElement.dataset['markdown'] = '';
-		contentElement.innerHTML = s[i].innerHTML;
+		
+		var clonedPre = s[i].cloneNode(true);
+		while (clonedPre.childNodes.length) {
+			contentElement.appendChild(clonedPre.childNodes[0]);
+		}
 
-		s[i].innerHTML = '';
-		s[i].insertBefore(contentElement);
+		s[i].parentNode.replaceChild(contentElement, s[i]);
 
+		// $pre.clone().children().appendTo($contentElement)
+		// $pre.replaceWith($contentElement);
 	}
 
 	boom();
