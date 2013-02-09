@@ -95,20 +95,20 @@ p > code {
 	.w3c .mail > .headers {
 		display: block !important;
 		height: 2em;
-		-webkit-transition: all 0.5s !important;
-		   -moz-transition: all 0.5s !important;
-		    -ms-transition: all 0.5s !important;
-		        transition: all 0.5s !important;
+		-webkit-transition: all 0.5s !important 0.5s;
+		   -moz-transition: all 0.5s !important 0.5s;
+		    -ms-transition: all 0.5s !important 0.5s;
+		        transition: all 0.5s !important 0.5s;
 	}
 	.w3c .mail > .headers:hover {
 		height: 12em !important;
 	}
 	.w3c .mail > .headers > *:not(#from) {
 		opacity: 0;
-		-webkit-transition: all 0.75s !important;
-		   -moz-transition: all 0.75s !important;
-		    -ms-transition: all 0.75s !important;
-		        transition: all 0.75s !important;
+		-webkit-transition: all 0.75s !important 0.5s;
+		   -moz-transition: all 0.75s !important 0.5s;
+		    -ms-transition: all 0.75s !important 0.5s;
+		        transition: all 0.75s !important 0.5s;
 	}
 	.w3c .mail > .headers:hover > * {
 		opacity: 1 !important;
