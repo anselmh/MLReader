@@ -41,6 +41,11 @@ twitter: [@helloanselm](https://twitter.com/helloanselm)
 ADN: [@anselm](https://alpha.app.net/anselm)
 Web: [anselm-hannemann.com](http://anselm-hannemann.com/)
 
+## Thanks to
+
+- Rodney Rehm, [@rodneyrehm](https://twitter.com/rodneyrehm)
+- Hans-Christian Reinl [@drublic](https://twitter.com/drublic)
+
 ## License
 
 See [LISENCE.md](LICENSE.md) for additional information. Please be aware of the license before using or redistributing.
