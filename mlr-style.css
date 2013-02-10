@@ -42,7 +42,16 @@ blockquote {
 }
 
 p > code {
-	color: #1CA8FF;
+	color: #0273f2;
+}
+
+a,
+a:hover{
+	color: #0273f2;
+}
+
+a:visited {
+	color: #666;
 }
 
 .w3c .links,
@@ -53,7 +62,7 @@ p > code {
 }
 .w3c .links li,
 .whatwg > ul > li {
-	color: #999 !important;
+	color: #666 !important;
 }
 
 
@@ -63,7 +72,7 @@ p > code {
 }
 	.w3c .head p,
 	.w3c .foot p{
-		color: #999 !important;
+		color: #666 !important;
 	}
 	.w3c .head a,
 	.w3c .foot a,
@@ -85,7 +94,7 @@ p > code {
 	.w3c #upper a,
 	.whatwg > a, 
 	.whatwg > ul a{
-		color: #999 !important;
+		color: #666 !important;
 	}
 
 
@@ -95,20 +104,21 @@ p > code {
 	.w3c .mail > .headers {
 		display: block !important;
 		height: 2em;
-		-webkit-transition: all 0.5s !important 0.5s;
-		   -moz-transition: all 0.5s !important 0.5s;
-		    -ms-transition: all 0.5s !important 0.5s;
-		        transition: all 0.5s !important 0.5s;
+		overflow: hidden;
+		-webkit-transition: all 0.5s 0.5s !important;
+		   -moz-transition: all 0.5s 0.5s !important;
+		    -ms-transition: all 0.5s 0.5s !important;
+		        transition: all 0.5s 0.5s !important;
 	}
 	.w3c .mail > .headers:hover {
 		height: 12em !important;
 	}
 	.w3c .mail > .headers > *:not(#from) {
 		opacity: 0;
-		-webkit-transition: all 0.75s !important 0.5s;
-		   -moz-transition: all 0.75s !important 0.5s;
-		    -ms-transition: all 0.75s !important 0.5s;
-		        transition: all 0.75s !important 0.5s;
+		-webkit-transition: all 0.75s 0.5s !important;
+		   -moz-transition: all 0.75s 0.5s !important;
+		    -ms-transition: all 0.75s 0.5s !important;
+		        transition: all 0.75s 0.5s !important;
 	}
 	.w3c .mail > .headers:hover > * {
 		opacity: 1 !important;
