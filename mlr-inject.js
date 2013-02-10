@@ -14,12 +14,12 @@ console.log(elem.innerHTML, "--------------------------");
 			var regex     = new RegExp('\\n?\\s{' + leadingws + '}','g');
 			var md        = (leadingws > 0) ? text.replace(regex,'\n') : text;
 
-
 			// fix closing tag on new line, caused by dumb email clients
 			md = md.replace(/\n(<\/[^>]+>)/g, '$1\n');
 			
 			// fix URLs that were converted to <a> by dumb email clients
-			md = md.replace(/<a href="([^"]+)">\1<\/a>/g, '$1');
+			// this removes all links and is not used due to that fact 
+			// md = md.replace(/<a href="([^"]+)">\1<\/a>/g, '$1');
 
 			// convert leading &gt; (entity) to > (literal)
 			md = md.replace(/(^|\n)(&gt;\s*)+/g, function(match) {
@@ -33,7 +33,7 @@ console.log(elem.innerHTML, "--------------------------");
 
 console.log(md, "--------------------------");
 			var html      = (new Showdown.converter()).makeHtml(md);
-		 
+
 			// here, have sum HTML
 			elem.innerHTML = html;
 	 
@@ -44,7 +44,7 @@ console.log(md, "--------------------------");
 	if(document.location.host == "lists.whatwg.org") {
 	  document.getElementsByTagName("body")[0].className = "whatwg";
 	}
-	else if (document.location.host == "lists.w3.org") {
+	else if (document.location.host == "lists.w3.org" || document.location.host == "localhost:8888") {
 	  document.getElementsByTagName("body")[0].className = "w3c";
 	}
 
