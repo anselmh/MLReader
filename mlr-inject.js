@@ -7,7 +7,7 @@
 	var boom = function () {
 	 
 		[].forEach.call( document.querySelectorAll('[data-markdown]'), function  fn(elem){
-console.log(elem.innerHTML, "--------------------------");
+
 			// strip leading whitespace so it isn't evaluated as code
 			var text      = elem.innerHTML.replace(/\n\s*\n/g,'\n\n');
 			var leadingws = text.match(/^\n?(\s*)/)[1].length;
@@ -31,7 +31,6 @@ console.log(elem.innerHTML, "--------------------------");
 			// fix whatver this is, you need 4 spaces!
 			md = md.replace(/\n\s{3}(\S&lt;)/g, '\n    $1');
 
-console.log(md, "--------------------------");
 			var html      = (new Showdown.converter()).makeHtml(md);
 
 			// here, have sum HTML
@@ -39,7 +38,6 @@ console.log(md, "--------------------------");
 	 
 	  });
 	};
-
 
 	if(document.location.host == "lists.whatwg.org") {
 	  document.getElementsByTagName("body")[0].className = "whatwg";
@@ -64,9 +62,6 @@ console.log(md, "--------------------------");
 		}
 
 		s[i].parentNode.replaceChild(contentElement, s[i]);
-
-		// $pre.clone().children().appendTo($contentElement)
-		// $pre.replaceWith($contentElement);
 	}
 
 	boom();
