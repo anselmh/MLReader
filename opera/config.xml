@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<widget xmlns="http://www.w3.org/ns/widgets" id="http://my.opera.com/" viewmodes="minimized" version="1.0">
+
+  <name>MLReader</name>
+
+  <author>Anselm Hannemann</author>
+  <description>This extension displays common webstandards mailing list archives in a more readable way. Currently supports W3C and WHATWG mailing lists.</description>
+
+  <access origin="http://lists.w3.org/" subdomains="true"/>
+  <access origin="http://lists.whatwg.org/" subdomains="true" />
+ 	
+</widget>
