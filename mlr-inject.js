@@ -1,11 +1,11 @@
 // Add body class to detect which mailing list archive we're in
-//@TODO: Make this a unified query so this works 
+//@TODO: Make this a unified query so this works
 //       basically on every mailing list
 
-(function (Showdown) {
-	
+;(function() {
+
 	var boom = function () {
-	 
+
 		[].forEach.call( document.querySelectorAll('[data-markdown]'), function  fn(elem){
 
 			// strip leading whitespace so it isn't evaluated as code
@@ -16,14 +16,14 @@
 
 			// fix closing tag on new line, caused by dumb email clients
 			md = md.replace(/\n(<\/[^>]+>)/g, '$1\n');
-			
+
 			// fix URLs that were converted to <a> by dumb email clients
-			// this removes all links and is not used due to that fact 
+			// this removes all links and is not used due to that fact
 			// md = md.replace(/<a href="([^"]+)">\1<\/a>/g, '$1');
 
 			// convert leading &gt; (entity) to > (literal)
 			md = md.replace(/(^|\n)(&gt;\s*)+/g, function(match) {
-				// add trailing space to separate <i> injected by  
+				// add trailing space to separate <i> injected by
 				// dumb email clients to visualize a repliy-quote
 				return match.replace(/&gt;/g, '>') + ' ';
 			});
@@ -31,11 +31,25 @@
 			// fix whatver this is, you need 4 spaces!
 			md = md.replace(/\n\s{3}(\S&lt;)/g, '\n    $1');
 
-			var html      = (new Showdown.converter()).makeHtml(md);
+			// Load Markdown Converter
+			marked.setOptions({
+				gfm: true,
+				highlight: function (code, lang, callback) {
+					pygmentize({ lang: lang, format: 'html' }, code, function (err, result) {
+						callback(err, result.toString());
+					});
+				},
+				tables: true,
+				breaks: true,
+				pedantic: false,
+				sanitize: false,
+				smartLists: true,
+				smartypants: false,
+				langPrefix: 'lang-'
+			});
 
 			// here, have sum HTML
-			elem.innerHTML = html;
-	 
+			elem.innerHTML = marked(md);
 	  });
 	};
 
@@ -50,12 +64,12 @@
 	var contentElement;
 	var i = 0;
 	var nodeLength = s.length;
-	
+
 	for (; i < nodeLength; i++) {
 		contentElement = document.createElement('div');
 		contentElement.className = 'msg';
 		contentElement.dataset['markdown'] = '';
-		
+
 		var clonedPre = s[i].cloneNode(true);
 		while (clonedPre.childNodes.length) {
 			contentElement.appendChild(clonedPre.childNodes[0]);
@@ -65,4 +79,7 @@
 	}
 
 	boom();
-}(Showdown));
+
+}).call(function() {
+  return this || (typeof window !== 'undefined' ? window : global);
+}());
