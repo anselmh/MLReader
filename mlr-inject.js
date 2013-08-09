@@ -4,6 +4,8 @@
 
 ;(function() {
 
+	var contentBackup = document.body.innerHTML;
+
 	var boom = function () {
 
 		[].forEach.call( document.querySelectorAll('[data-markdown]'), function  fn(elem){
@@ -31,6 +33,19 @@
 			// fix whatver this is, you need 4 spaces!
 			md = md.replace(/\n\s{3}(\S&lt;)/g, '\n    $1');
 
+			// Format nested quotes properly regarding Markdown style
+			md = md.replace('>>', '> >');
+
+			// Find empty <i> </i> elements to detect quote level changes
+			md = md.replace(/<i><\/i>/g, '\n\n');
+
+			// Remove breaks inside of paragraphs
+			if ( md.match(/&gt;/gi) !== null ) {
+
+				md = md.replace(/(>*?) <i>(.*?)<\/i>/gim, '$1 $2');
+				// @TODO: Try to fix newline >> forcings
+			}
+
 			// Load Markdown Converter
 			marked.setOptions({
 				gfm: true,
@@ -48,8 +63,38 @@
 				langPrefix: 'lang-'
 			});
 
-			// here, have sum HTML
-			elem.innerHTML = marked(md);
+			// Run Markdown engine
+			md = marked(md);
+
+			// Fix line-breaks in blockquotes, should be achieved by line 45
+			if ( md.match(/<blockquote>/gi) !== null ) {
+
+				md = md.replace(/<br>/g, ' ');
+			}
+
+			// Finally, set new innerHTML content
+			elem.innerHTML = md;
+
+			// Define Restore original content button as fallback
+			var backupBtnStyle = 'display: block; position: absolute; top: 0; left: 0; padding: 8px; background: #000; color: #fff !important;';
+
+			var createBackupBtn = document.createElement('a');
+			createBackupBtn.setAttribute('style',backupBtnStyle);
+			createBackupBtn.setAttribute('href','#');
+			createBackupBtn.setAttribute('id', 'backupBtn');
+			createBackupBtnContent = document.createTextNode('Reset Style');
+
+			createBackupBtn.appendChild(createBackupBtnContent);
+
+			var contentSection = document.querySelector('[data-markdown]');
+			document.body.insertBefore(createBackupBtn, contentSection);
+
+			var backupBtnElemSelector = document.getElementById('backupBtn');
+
+			backupBtnElemSelector.addEventListener('click', function() {
+				document.body.innerHTML = contentBackup;
+			});
+
 	  });
 	};
 
@@ -79,6 +124,7 @@
 	}
 
 	boom();
+
 
 }).call(function() {
   return this || (typeof window !== 'undefined' ? window : global);

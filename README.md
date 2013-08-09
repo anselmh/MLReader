@@ -1,7 +1,7 @@
 MLReader
 ========
 
-This extension displays common webstandards mailing list archives in a more readable way. Currently supports w3c mailing lists.
+This extension displays common webstandards mailing list archives in a more readable way. Currently supports whatwg and w3c mailing lists.
 
 ## Get it:
 
@@ -23,14 +23,11 @@ This extension displays common webstandards mailing list archives in a more read
 ### Supported platforms:
 
 - [Google Chrome via Web Store](https://chrome.google.com/webstore/detail/webstandards-mailing-list/kapkofkiggcefopeamfcpkkgfjjhmamf)
-- ~~Mozilla Firefox~~ [planned]
-- ~~Opera~~ [planned]
 
 ### Known problems:
 
 - fonts won't work offline (unless you have them installed on your machine)
 - targets the whole archive not only messages itself
-- no quoting support (yet)
 
 --------
 
@@ -40,11 +37,6 @@ Anselm Hannemann
 twitter: [@helloanselm](https://twitter.com/helloanselm)
 ADN: [@anselm](https://alpha.app.net/anselm)
 Web: [anselm-hannemann.com](http://anselm-hannemann.com/)
-
-## Thanks to
-
-- Rodney Rehm, [@rodneyrehm](https://twitter.com/rodneyrehm)
-- Hans-Christian Reinl [@drublic](https://twitter.com/drublic)
 
 ## License
 
