@@ -1,6 +1,4 @@
 // Add body class to detect which mailing list archive we're in
-//@TODO: Make this a unified query so this works
-//       basically on every mailing list
 
 ;(function() {
 
@@ -19,14 +17,10 @@
 			// fix closing tag on new line, caused by dumb email clients
 			md = md.replace(/\n(<\/[^>]+>)/g, '$1\n');
 
-			// fix URLs that were converted to <a> by dumb email clients
-			// this removes all links and is not used due to that fact
-			// md = md.replace(/<a href="([^"]+)">\1<\/a>/g, '$1');
-
 			// convert leading &gt; (entity) to > (literal)
 			md = md.replace(/(^|\n)(&gt;\s*)+/g, function(match) {
 				// add trailing space to separate <i> injected by
-				// dumb email clients to visualize a repliy-quote
+				// dumb email clients to visualize a reply-quote
 				return match.replace(/&gt;/g, '>') + ' ';
 			});
 
@@ -49,11 +43,6 @@
 			// Load Markdown Converter
 			marked.setOptions({
 				gfm: true,
-				highlight: function (code, lang, callback) {
-					pygmentize({ lang: lang, format: 'html' }, code, function (err, result) {
-						callback(err, result.toString());
-					});
-				},
 				tables: true,
 				breaks: true,
 				pedantic: false,
@@ -66,7 +55,7 @@
 			// Run Markdown engine
 			md = marked(md);
 
-			// Fix line-breaks in blockquotes, should be achieved by line 45
+			// Fix line-breaks in blockquotes
 			if ( md.match(/<blockquote>/gi) !== null ) {
 
 				md = md.replace(/<br>/g, ' ');
@@ -94,15 +83,16 @@
 			backupBtnElemSelector.addEventListener('click', function() {
 				document.body.innerHTML = contentBackup;
 			});
-
-	  });
+		});
 	};
 
-	if(document.location.host == "lists.whatwg.org") {
+	if(document.location.host == "lists.whatwg.org" || document.location.host == "localhost") {
 	  document.getElementsByTagName("body")[0].className = "whatwg";
+	  console.log('found whatwg');
 	}
-	else if (document.location.host == "lists.w3.org" || document.location.host == "localhost:8888") {
+	else if (document.location.host == "lists.w3.org" || document.location.host == "localhost") {
 	  document.getElementsByTagName("body")[0].className = "w3c";
+	  console.log('found w3c');
 	}
 
 	var s = document.getElementsByTagName('pre');
