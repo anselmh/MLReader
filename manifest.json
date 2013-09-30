@@ -1,6 +1,6 @@
 {
 	"name": "Webstandards Mailing List Reader",
-	"version": "2.0.2",
+	"version": "2.0.3",
 	"manifest_version": 2,
 	"description": "This extension displays common webstandards mailing list archives in a more readable way.",
 	"content_scripts": [

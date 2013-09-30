@@ -75,7 +75,7 @@
 
 			createBackupBtn.appendChild(createBackupBtnContent);
 
-			var contentSection = document.querySelector('[data-markdown]');
+			var contentSection = document.getElementsByTagName('pre')[0];
 			document.body.insertBefore(createBackupBtn, contentSection);
 
 			var backupBtnElemSelector = document.getElementById('backupBtn');
@@ -88,11 +88,9 @@
 
 	if(document.location.host == "lists.whatwg.org" || document.location.host == "localhost") {
 	  document.getElementsByTagName("body")[0].className = "whatwg";
-	  console.log('found whatwg');
 	}
 	else if (document.location.host == "lists.w3.org" || document.location.host == "localhost") {
 	  document.getElementsByTagName("body")[0].className = "w3c";
-	  console.log('found w3c');
 	}
 
 	var s = document.getElementsByTagName('pre');

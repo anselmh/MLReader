@@ -150,3 +150,14 @@ a:visited {
 	.w3c .mail #received {
 		color: #444 !important;
 	}
+	
+	.msg {
+		word-break: break-all;
+		word-break: break-word; /* WebKit NonStandard */
+		
+		overflow-wrap: break-word; /* Future Standard */
+		
+		-webkit-hyphens: auto;
+		   -moz-hyphens: auto;
+		        hyphens: auto;
+	}
