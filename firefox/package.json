@@ -1,0 +1,9 @@
+{
+  "name": "webstandards-mailing-list-reader",
+  "title": "Webstandards Mailing List Reader",
+  "id": "jid1-0ETA6GIC1VHlOw",
+  "description": "This extension displays common webstandards mailing list archives in a more readable way.",
+  "author": "Anselm Hannemann <hello@anselm-hannemann.com>",
+  "license": "MIT License",
+  "version": "2.0"
+}
